@@ -8,22 +8,25 @@
     <link rel="stylesheet" href="css/styles.css" />
     <meta
       name="description"
-      content="Ilia Orlov — founder of Passquare and CARDPR. Book a 15-minute call."
+      content="Ilia Orlov — founder of Passquare and CARDPR."
     />
   </head>
   <body>
     <div class="page">
       <header>
         <img class="photo" src="assets/orlov.jpg" alt="Ilia Orlov" width="96" height="96" />
-        <div>
+        <div class="intro">
           <h1>Ilia Orlov</h1>
-          <p class="lead">Founder of Passquare &amp; CARDPR.</p>
-          <p class="lead">Book a 15-minute call below.</p>
+          <p class="lead">Founder of Passquare &amp; CARDPR</p>
+          <p class="lead">Business, sport and adventures!</p>
           <ul class="socials">
             <li><a href="https://linkedin.com/in/proorlov" target="_blank" rel="noreferrer">LinkedIn</a></li>
             <li><a href="https://instagram.com/proorlov" target="_blank" rel="noreferrer">Instagram</a></li>
             <li><a href="https://t.me/proorlov" target="_blank" rel="noreferrer">Telegram</a></li>
           </ul>
+        </div>
+        <div class="world" aria-hidden="true">
+          <canvas id="world-map"></canvas>
         </div>
       </header>
 
@@ -47,5 +50,6 @@
         <!-- Cal inline embed code ends -->
       </div>
     </div>
+    <script src="js/world.js"></script>
   </body>
 </html>
