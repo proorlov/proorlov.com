@@ -1,1 +1,108 @@
-hello!
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ilia Orlov</title>
+    <meta
+      name="description"
+      content="Ilia Orlov — founder of Passquare. Book a 15-minute call."
+    />
+    <style>
+      :root {
+        --bg: #f6f3ee;
+        --ink: #171614;
+        --muted: #6b675f;
+        --line: #e4dfd6;
+        --card: #fffdf9;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      .page {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 48px 20px 80px;
+      }
+
+      header {
+        margin-bottom: 36px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 560;
+        letter-spacing: -0.04em;
+      }
+
+      .lead {
+        margin: 10px 0 0;
+        max-width: 42ch;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .cal {
+        width: 100%;
+        height: min(820px, 85vh);
+        min-height: 640px;
+        overflow: hidden;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+      }
+
+      #my-cal-inline-15min {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <h1>Ilia Orlov</h1>
+        <p class="lead">
+          Founder of Passquare. Book a 15-minute call below.
+        </p>
+      </header>
+
+      <div class="cal">
+        <!-- Cal inline embed code begins -->
+        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-15min"></div>
+        <script type="text/javascript">
+          (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+          Cal("init", "15min", {origin:"https://app.cal.com"});
+          Cal.config = Cal.config || {};
+          Cal.config.forwardQueryParams = true;
+
+          Cal.ns["15min"]("inline", {
+            elementOrSelector:"#my-cal-inline-15min",
+            config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"},
+            calLink: "proorlov/15min",
+          });
+
+          Cal.ns["15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+        </script>
+        <!-- Cal inline embed code ends -->
+      </div>
+    </div>
+  </body>
+</html>
