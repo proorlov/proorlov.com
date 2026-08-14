@@ -1,0 +1,102 @@
+:root {
+  --bg: #f6f3ee;
+  --ink: #171614;
+  --muted: #6b675f;
+  --line: #e4dfd6;
+  --card: #fffdf9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 560;
+  letter-spacing: -0.04em;
+}
+
+.lead {
+  margin: 8px 0 0;
+  max-width: 42ch;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socials a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 15px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+}
+
+.socials a:hover {
+  border-bottom-color: var(--ink);
+}
+
+.cal {
+  width: 100%;
+  height: 580px;
+  overflow: hidden;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+#my-cal-inline-15min {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+@media (max-width: 560px) {
+  header {
+    grid-template-columns: 1fr;
+  }
+}
