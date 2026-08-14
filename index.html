@@ -6,7 +6,7 @@
     <title>Ilia Orlov</title>
     <meta
       name="description"
-      content="Ilia Orlov — founder of Passquare. Book a 15-minute call."
+      content="Ilia Orlov — founder of Passquare and CARDPR. Book a 15-minute call."
     />
     <style>
       :root {
@@ -41,7 +41,19 @@
       }
 
       header {
+        display: grid;
+        grid-template-columns: 96px 1fr;
+        gap: 20px;
+        align-items: center;
         margin-bottom: 36px;
+      }
+
+      .photo {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid var(--line);
       }
 
       h1 {
@@ -52,16 +64,36 @@
       }
 
       .lead {
-        margin: 10px 0 0;
+        margin: 8px 0 0;
         max-width: 42ch;
         color: var(--muted);
         font-size: 17px;
       }
 
+      .socials {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        margin: 14px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .socials a {
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 15px;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 1px;
+      }
+
+      .socials a:hover {
+        border-bottom-color: var(--ink);
+      }
+
       .cal {
         width: 100%;
-        height: min(820px, 85vh);
-        min-height: 640px;
+        height: 580px;
         overflow: hidden;
         background: var(--card);
         border: 1px solid var(--line);
@@ -73,15 +105,28 @@
         height: 100%;
         overflow: auto;
       }
+
+      @media (max-width: 560px) {
+        header {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="page">
       <header>
-        <h1>Ilia Orlov</h1>
-        <p class="lead">
-          Founder of Passquare. Book a 15-minute call below.
-        </p>
+        <img class="photo" src="assets/orlov.jpg" alt="Ilia Orlov" width="96" height="96" />
+        <div>
+          <h1>Ilia Orlov</h1>
+          <p class="lead">Founder of Passquare &amp; CARDPR.</p>
+          <p class="lead">Book a 15-minute call below.</p>
+          <ul class="socials">
+            <li><a href="https://linkedin.com/in/proorlov" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            <li><a href="https://instagram.com/proorlov" target="_blank" rel="noreferrer">Instagram</a></li>
+            <li><a href="https://t.me/proorlov" target="_blank" rel="noreferrer">Telegram</a></li>
+          </ul>
+        </div>
       </header>
 
       <div class="cal">
@@ -95,7 +140,7 @@
 
           Cal.ns["15min"]("inline", {
             elementOrSelector:"#my-cal-inline-15min",
-            config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"auto"},
+            config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
             calLink: "proorlov/15min",
           });
 
