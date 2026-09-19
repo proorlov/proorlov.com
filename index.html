@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><script>if(location.protocol==="http:")location.replace("https://"+location.host+location.pathname+location.search+location.hash);</script>
+  <head><script>if(location.protocol==="http:"&&/(^|\.)proorlov\.com$/i.test(location.hostname))location.replace("https://"+location.host+location.pathname+location.search+location.hash);</script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ilia Orlov</title>
     <link rel="icon" href="favicon.ico" />
-    <link rel="stylesheet" href="css/styles.css?v=1.0.17" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap"
+    />
+    <link rel="stylesheet" href="css/styles.css?v=1.0.22" />
     <meta
       name="description"
       content="Ilia Orlov — founder of Passquare and CARDPR."
@@ -34,6 +40,17 @@
         Here one arrives, as&nbsp;if by&nbsp;accident, and finds it&nbsp;was nothing of&nbsp;the sort. Self-made, as&nbsp;the saying goes, though one never quite knows whose saying it&nbsp;is: an&nbsp;international entrepreneur who wandered into loyalty, SaaS, and growth-hacking and found, rather curiously, that the whole world of&nbsp;business had been waiting there, quite as&nbsp;if it&nbsp;had been expecting company all&nbsp;along. Investing, building, crossing borders with the sort of&nbsp;ease that looks like luck until one notices it&nbsp;is not, and understanding how international affairs actually work, which is&nbsp;rarer than it&nbsp;ought to&nbsp;be. Open to&nbsp;partnerships, delighted to&nbsp;consult, and always ready for a&nbsp;curious conversation. So do write <em>welcome</em>, and we shall see what&nbsp;follows.
       </p>
 
+      <div class="logos" aria-label="Projects">
+        <a class="logo" href="https://passquare.com" target="_blank" rel="noopener noreferrer">
+          <img src="assets/passquare.svg" alt="" width="40" height="40" />
+          Passquare
+        </a>
+        <a class="logo" href="https://cardpr.com" target="_blank" rel="noopener noreferrer">
+          <img src="assets/cardpr.svg" alt="" width="40" height="40" />
+          CARDPR
+        </a>
+      </div>
+
       <div class="cal">
         <!-- Cal inline embed code begins -->
         <div id="my-cal-inline-15min"></div>
@@ -53,8 +70,9 @@
         </script>
         <!-- Cal inline embed code ends -->
       </div>
-      <p class="site-version">version: 5.02.184</p>
+      <p class="site-version">version: 5.02.185</p>
     </div>
     <script src="js/world.js?v=1.0.15"></script>
+    <script src="js/logo-press.js?v=1.0.21"></script>
   </body>
 </html>
