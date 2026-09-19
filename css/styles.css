@@ -16,6 +16,10 @@ body {
   min-height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--bg);
   color: var(--ink);
@@ -24,14 +28,14 @@ body {
 }
 
 .page {
-  max-width: 920px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 48px 20px 80px;
 }
 
 header {
   display: grid;
-  grid-template-columns: 96px minmax(0, 0.9fr) minmax(220px, 1.2fr);
+  grid-template-columns: 96px minmax(0, 1fr) minmax(220px, 1.2fr);
   gap: 20px 24px;
   align-items: center;
   margin-bottom: 36px;
@@ -59,23 +63,23 @@ header {
 
 h1 {
   margin: 0;
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(24px, 3.6vw, 34px);
   font-weight: 560;
   letter-spacing: -0.04em;
 }
 
 .lead {
-  margin: 8px 0 0;
+  margin: 6px 0 0;
   max-width: 42ch;
   color: var(--muted);
-  font-size: 17px;
+  font-size: 14px;
 }
 
 .socials {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 16px;
-  margin: 14px 0 0;
+  gap: 6px 14px;
+  margin: 10px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -83,7 +87,7 @@ h1 {
 .socials a {
   color: var(--ink);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 13px;
   border-bottom: 1px solid var(--line);
   padding-bottom: 1px;
 }
@@ -115,15 +119,15 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px 72px;
-  margin: 0 0 36px;
+  gap: 10px 28px;
+  margin: 14px 0 0;
 }
 
 .logo {
   display: inline-flex;
   align-items: center;
   gap: 0.15em;
-  height: 40px;
+  height: 32px;
   overflow: visible;
   color: var(--ink);
   text-decoration: none;
@@ -220,13 +224,145 @@ a:hover .logo-mark__stem {
 }
 
 
-.cal {
-  width: 100%;
-  height: 580px;
-  overflow: hidden;
+.events {
+  margin: 0 0 8px;
+}
+
+.events-head {
+  margin: 0 0 22px;
+}
+
+.events-head h2 {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 560;
+  letter-spacing: -0.03em;
+}
+
+.events-lead {
+  margin: 10px 0 0;
+  max-width: 68ch;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.events-legend {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.events-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 18px 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.events-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 1px;
+}
+
+.events-nav a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+.events-month {
+  margin: 28px 0 0;
+  scroll-margin-top: 20px;
+}
+
+.events-month h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 560;
+  letter-spacing: -0.02em;
+}
+
+.events-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 16px;
+}
+
+.events-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.events-table th,
+.events-table td {
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.events-table th {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 560;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.events-table tbody tr:last-child th,
+.events-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.events-table td:first-child {
+  white-space: nowrap;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.events-table td:nth-child(2) {
+  white-space: nowrap;
+}
+
+.events-table td:nth-child(5),
+.events-table td:nth-child(6) {
+  white-space: nowrap;
+}
+
+.events-table a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.events-table a:hover {
+  border-bottom-color: var(--ink);
+}
+
+.events-table tbody tr.event-main td {
+  background: rgba(0, 122, 255, 0.09);
+}
+
+.events-table tbody tr.event-main td:first-child {
+  box-shadow: inset 3px 0 0 #007aff;
+}
+
+.events-note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Charter, Georgia, serif;
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 .site-version {
@@ -238,12 +374,6 @@ a:hover .logo-mark__stem {
   opacity: 0.72;
   text-align: right;
   font-variant-numeric: tabular-nums;
-}
-
-#my-cal-inline-15min {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
 }
 
 @media (max-width: 820px) {
@@ -262,7 +392,8 @@ a:hover .logo-mark__stem {
     margin-right: auto;
   }
 
-  .socials {
+  .socials,
+  .logos {
     justify-content: center;
   }
 
@@ -277,10 +408,6 @@ a:hover .logo-mark__stem {
     margin-right: auto;
     text-align: left;
   }
-
-  .logos {
-    justify-content: center;
-  }
 }
 
 @media (max-width: 560px) {
@@ -288,7 +415,8 @@ a:hover .logo-mark__stem {
     padding: 32px 16px 64px;
   }
 
-  .logos {
-    justify-content: center;
+  .events-table th,
+  .events-table td {
+    padding: 9px 10px;
   }
 }
