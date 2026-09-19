@@ -122,26 +122,25 @@ h1 {
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.15em;
+  height: 40px;
+  overflow: visible;
   color: var(--ink);
-  font-family: "Unbounded", "Arial Black", Impact, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.04em;
   text-decoration: none;
-  cursor: pointer;
 }
 
-.logo img,
-.logo-mark {
-  display: block;
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
+.logo:hover {
+  color: var(--ink);
 }
 
 .logo-mark {
   position: relative;
+  display: block;
+  flex-shrink: 0;
+  height: 118%;
+  width: auto;
+  aspect-ratio: 1 / 1;
+  overflow: visible;
 }
 
 .logo-mark__layer {
@@ -153,43 +152,55 @@ h1 {
   overflow: visible;
 }
 
+.logo-wordmark {
+  flex: 0 0 auto;
+  height: 72%;
+  width: auto;
+  overflow: visible;
+}
+
+.logo--cardpr .logo-wordmark {
+  aspect-ratio: 803 / 257;
+}
+
+.logo--passquare .logo-wordmark {
+  aspect-ratio: 965 / 257;
+}
+
+.logo-mark__layer--top,
+.logo-mark__stem {
+  transition: transform 0.1s ease-out;
+}
+
 .logo-mark__layer--top {
   transform: translateY(0);
-  transition: transform 0.1s ease-out;
 }
 
 .logo-mark__stem {
   transform-box: fill-box;
   transform-origin: 50% 100%;
   transform: scaleY(1);
-  transition: transform 0.1s ease-out;
 }
 
 .logo:hover .logo-mark__layer--top,
 .logo:hover .logo-mark__stem,
 .logo:focus-visible .logo-mark__layer--top,
 .logo:focus-visible .logo-mark__stem,
-.logo:active .logo-mark__layer--top,
-.logo:active .logo-mark__stem {
+a:hover .logo-mark__layer--top,
+a:hover .logo-mark__stem {
   transition-duration: 0.08s;
 }
 
 .logo:hover .logo-mark__layer--top,
-.logo:focus-visible .logo-mark__layer--top {
+.logo:focus-visible .logo-mark__layer--top,
+a:hover .logo-mark__layer--top {
   transform: translateY(10%);
 }
 
 .logo:hover .logo-mark__stem,
-.logo:focus-visible .logo-mark__stem {
+.logo:focus-visible .logo-mark__stem,
+a:hover .logo-mark__stem {
   transform: scaleY(0.4);
-}
-
-.logo:active .logo-mark__layer--top {
-  transform: translateY(16%);
-}
-
-.logo:active .logo-mark__stem {
-  transform: scaleY(0.22);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -202,11 +213,12 @@ h1 {
   .logo:hover .logo-mark__stem,
   .logo:focus-visible .logo-mark__layer--top,
   .logo:focus-visible .logo-mark__stem,
-  .logo:active .logo-mark__layer--top,
-  .logo:active .logo-mark__stem {
+  a:hover .logo-mark__layer--top,
+  a:hover .logo-mark__stem {
     transform: none;
   }
 }
+
 
 .cal {
   width: 100%;
