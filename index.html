@@ -11,7 +11,12 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap"
     />
-    <link rel="stylesheet" href="css/styles.css?v=1.0.32" />
+    <script>
+      document.write('<script src="js/version.js?t=' + Date.now() + '"><\/script>');
+    </script>
+    <script>
+      siteCss("css/styles.css");
+    </script>
     <meta
       name="description"
       content="Ilia Orlov – founder of Passquare and CARDPR."
@@ -1510,9 +1515,12 @@
           </p>
         </section>
       </section>
-      <p class="site-version">version: 5.02.204</p>
+      <p class="site-version"></p>
     </div>
-    <script src="js/world.js?v=1.0.21"></script>
-    <script src="js/logo-press.js?v=1.0.22"></script>
+    <script>
+      document.querySelector(".site-version").textContent = "version: " + SITE_VERSION;
+      siteJs("js/world.js");
+      siteJs("js/logo-press.js");
+    </script>
   </body>
 </html>
