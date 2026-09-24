@@ -1,5 +1,7 @@
 RewriteEngine On
 
+RewriteRule ^meet/?$ https://cal.com/proorlov/30min [L,R=301]
+
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
